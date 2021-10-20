@@ -1,0 +1,48 @@
+server:
+  port:
+    8082
+
+spring:
+  profiles:
+    active: qa
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 143@Arpilu
+    url: jdbc:mysql://localhost:3306/dcbapp
+    username: amiya559
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+---
+
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 143@Arpilu
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    username: amiya559
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 143@Arpilu
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    username: amiya559
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
